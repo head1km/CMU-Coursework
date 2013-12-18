@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;HW3&apos; to &apos;TermIO&apos;" description="Rename resource &apos;HW3&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/HW3" name="TermIO" stamp="1379895670994" updateReferences="true"/>
+</session>

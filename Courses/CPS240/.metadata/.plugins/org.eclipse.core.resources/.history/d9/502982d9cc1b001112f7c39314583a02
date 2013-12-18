@@ -1,0 +1,77 @@
+/*
+ * Roxanne Harris Alex Brya, Ben lubitz, Kyle Head
+ * Kyle Head
+ * CPS 240
+ * Assignment 8
+ * 11/7/11
+ * yaya!
+ */
+package angsty_Butterfliess;
+
+import java.beans.XMLDecoder;
+import java.beans.XMLEncoder;
+import java.io.*;
+
+public class RubricEditor {
+
+	public Rubric myRubric;
+
+	// method in which will create a Rubric to edit but is not saved until save
+	// command within GUI is pressed
+	public void create() {
+		myRubric = new Rubric();
+	}
+
+	// Edits the Rubric using the GUI to create the rubric
+	public void edit() {
+	}
+
+	// makes a shallow copy of the Rubric
+	public Rubric copy() {
+		Rubric rubricCopy = myRubric;
+		return rubricCopy;
+	}
+
+	// Nulls out the rubric file to create a delete file
+	public void delete() {
+		myRubric = null;
+	}
+
+	// method used by GUI once GUI is implemented
+	public void save(Object myRubric) {    
+	    //this is the bit where you write your XML to the file
+		String save = "k";
+			saveOption sWindow = new saveOption();
+			saveOption.main(null);
+		while(sWindow.getNewName() == null){
+			
+		}
+		save = sWindow.getNewName();
+		System.out.print(save);
+	    try {
+	        FileOutputStream fos = new FileOutputStream(save + ".xml");
+	        XMLEncoder xenc = new XMLEncoder(fos);
+	        xenc.writeObject(myRubric);
+	        xenc.flush();
+	        xenc.close();
+	        
+	    }
+	    catch(IOException e) {
+	        e.printStackTrace();
+	    }
+	}
+
+	public void open() {
+		// Create input stream.
+		  FileInputStream fis;
+		try {
+			fis = new FileInputStream("new.xml");
+			XMLDecoder xdec = new XMLDecoder(fis);
+			RubricMetadata newData = (RubricMetadata) xdec.readObject();
+			myRubric.rubData = newData;
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+}

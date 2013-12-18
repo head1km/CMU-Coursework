@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+  <xs:element name="rubric">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="course"/>
+        <xs:element ref="assignment"/>
+        <xs:element ref="questions"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="course">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="name"/>
+        <xs:element ref="term"/>
+        <xs:element ref="crn"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="name" type="xs:string"/>
+  <xs:element name="term" type="xs:string"/>
+  <xs:element name="crn" type="xs:string"/>
+  <xs:element name="assignment">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="number"/>
+        <xs:element ref="issued"/>
+        <xs:element ref="due"/>
+        <xs:element ref="description"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="number" type="xs:string"/>
+  <xs:element name="issued" type="xs:string"/>
+  <xs:element name="due" type="xs:string"/>
+  <xs:element name="questions">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="question"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="question">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="description"/>
+        <xs:element ref="value"/>
+      </xs:sequence>
+      <xs:attribute name="number" type="xs:int"/>
+      <xs:attribute default="0" name="default_score" type="xs:float"/>
+      <xs:attribute name="test_case" type="xs:string" use="optional"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="value" type="xs:decimal"/>
+  <xs:element name="description" type="xs:string"/>
+</xs:schema>

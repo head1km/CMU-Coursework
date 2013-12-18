@@ -1,0 +1,115 @@
+package angsty_Butterfliess;
+import java.awt.EventQueue;
+
+import javax.swing.GroupLayout;
+import javax.swing.GroupLayout.Alignment;
+import javax.swing.JFormattedTextField;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextPane;
+import javax.swing.LayoutStyle.ComponentPlacement;
+
+/**
+ * By Kyle Head
+ * 
+ * @author head1km
+ * 
+ */
+public class TestQuestion {
+
+	private JFrame frmQuestionEditor;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					TestQuestion window = new TestQuestion();
+					window.frmQuestionEditor.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the application.
+	 */
+	public TestQuestion() {
+		initialize();
+	}
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+		frmQuestionEditor = new JFrame();
+		frmQuestionEditor.setTitle("Question Editor");
+		frmQuestionEditor.setBounds(100, 100, 505, 291);
+		frmQuestionEditor.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+		JPanel panel = new JPanel();
+		GroupLayout groupLayout = new GroupLayout(
+				frmQuestionEditor.getContentPane());
+		groupLayout.setHorizontalGroup(
+			groupLayout.createParallelGroup(Alignment.LEADING)
+				.addGroup(groupLayout.createSequentialGroup()
+					.addContainerGap()
+					.addComponent(panel, GroupLayout.PREFERRED_SIZE, 498, GroupLayout.PREFERRED_SIZE)
+					.addContainerGap(71, Short.MAX_VALUE))
+		);
+		groupLayout.setVerticalGroup(
+			groupLayout.createParallelGroup(Alignment.LEADING)
+				.addGroup(groupLayout.createSequentialGroup()
+					.addContainerGap()
+					.addComponent(panel, GroupLayout.DEFAULT_SIZE, 343, Short.MAX_VALUE)
+					.addContainerGap())
+		);
+
+		JFormattedTextField formattedTextField_1 = new JFormattedTextField();
+		formattedTextField_1.setText("0");
+
+		JTextPane txtpnEnterQuestionComments = new JTextPane();
+		txtpnEnterQuestionComments.setText("Enter A Question");
+
+		JLabel lblComments = new JLabel("Question:");
+		lblComments.setLabelFor(txtpnEnterQuestionComments);
+		
+		JLabel lblPointsPossible = new JLabel("Points Possible:");
+		GroupLayout gl_panel = new GroupLayout(panel);
+		gl_panel.setHorizontalGroup(
+			gl_panel.createParallelGroup(Alignment.LEADING)
+				.addGroup(gl_panel.createSequentialGroup()
+					.addGap(56)
+					.addGroup(gl_panel.createParallelGroup(Alignment.LEADING)
+						.addComponent(txtpnEnterQuestionComments, GroupLayout.PREFERRED_SIZE, 366, GroupLayout.PREFERRED_SIZE)
+						.addComponent(lblComments))
+					.addContainerGap(153, Short.MAX_VALUE))
+				.addGroup(Alignment.TRAILING, gl_panel.createSequentialGroup()
+					.addGap(146)
+					.addComponent(lblPointsPossible)
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addComponent(formattedTextField_1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+					.addGap(302))
+		);
+		gl_panel.setVerticalGroup(
+			gl_panel.createParallelGroup(Alignment.LEADING)
+				.addGroup(gl_panel.createSequentialGroup()
+					.addGap(56)
+					.addGroup(gl_panel.createParallelGroup(Alignment.BASELINE)
+						.addComponent(lblPointsPossible)
+						.addComponent(formattedTextField_1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+					.addGap(14)
+					.addComponent(lblComments)
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addComponent(txtpnEnterQuestionComments, GroupLayout.PREFERRED_SIZE, 63, GroupLayout.PREFERRED_SIZE)
+					.addContainerGap(160, Short.MAX_VALUE))
+		);
+		panel.setLayout(gl_panel);
+		frmQuestionEditor.getContentPane().setLayout(groupLayout);
+	}
+}

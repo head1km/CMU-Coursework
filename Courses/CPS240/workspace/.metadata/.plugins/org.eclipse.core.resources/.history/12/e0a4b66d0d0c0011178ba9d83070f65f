@@ -1,0 +1,38 @@
+/**
+ * Roxanne Harris, Alexander Brya, Kyle Head, Ben Lubitz
+ * Kyle Head
+ * CPS 240
+ * Assignment 8
+ */
+
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class RubricEditorTest {
+	
+	private RubricEditor myRubricEditor = new RubricEditor();
+	private Rubric myRubric;
+	private Rubric myRubricCopy;
+	
+	@Test
+	public void testCreate() {
+		myRubric = myRubricEditor.create();
+		assertNotNull("NO grade sheet created.", myRubric);
+	}
+
+	@Test
+	public void testCopy() {
+		myRubricCopy = myRubricEditor.copy();
+		assertNotNull("Copy not Created.", myRubricCopy);
+		assertNotSame("Only a shallow copy.", myRubric, myRubricCopy);
+	}
+
+	@Test
+	public void testDelete() {
+		myRubricEditor.delete();
+		assertNull("Gradesheet not deleted.", myRubric);
+	}
+
+}

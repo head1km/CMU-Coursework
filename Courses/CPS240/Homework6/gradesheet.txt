@@ -1,0 +1,21 @@
+Name        : Student, J Random
+Score       : 7 / 10
+Course      : Object Oriented Programming (22161280) 
+Term        : Fall 2011
+Assignment  : Homework 02
+Issued      : 9/8/2011
+Due         : 9/13/2011
+Description :
+Initial requirements document for rubric system.                                
+
+Name ................................................................. 2.0 / 2
+
+What is a rubric? .................................................... 2.0 / 2
+
+How a rubric system could be used for grading? ....................... 3.0 / 3
+
+Major components ....................................................... 0 / 3
+
+Comments:
+Looking Good!                                                                   
+

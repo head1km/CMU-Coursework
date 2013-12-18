@@ -1,0 +1,138 @@
+/**
+ * By Kyle Head
+ */
+package angsty_Butterfliess;
+
+import java.awt.EventQueue;
+import java.awt.event.FocusAdapter;
+import java.awt.event.FocusEvent;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+
+import javax.swing.GroupLayout;
+import javax.swing.GroupLayout.Alignment;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+import javax.swing.LayoutStyle.ComponentPlacement;
+
+/**
+ * @author head1km
+ *
+ */
+public class saveOption {
+
+	private JFrame frmSaveFileName;
+	private JTextField saveNameField;
+	private String newname;
+	private JButton btnEnter;
+
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					saveOption window = new saveOption();
+					window.getFrmSaveFileName().setVisible(true);
+					
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the application.
+	 */
+	public saveOption() {
+		initialize();
+	}
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+		setFrmSaveFileName(new JFrame());
+		getFrmSaveFileName().setTitle("Save file name");
+		getFrmSaveFileName().setBounds(100, 100, 450, 300);
+		getFrmSaveFileName().setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+		saveNameField = new JTextField();
+		saveNameField.addFocusListener(new FocusAdapter() {
+			@Override
+			public void focusLost(FocusEvent arg0) {
+				newname = saveNameField.getText();
+			}
+		});
+		saveNameField.setColumns(10);
+		
+		JLabel lblEnterSaveFile = new JLabel("Enter save file name:");
+		
+		btnEnter = new JButton("Enter");
+		btnEnter.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				System.out.print(newname);
+				getFrmSaveFileName().setVisible(false);
+			}
+		});
+		GroupLayout groupLayout = new GroupLayout(getFrmSaveFileName().getContentPane());
+		groupLayout.setHorizontalGroup(
+			groupLayout.createParallelGroup(Alignment.LEADING)
+				.addGroup(groupLayout.createSequentialGroup()
+					.addGap(143)
+					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+						.addGroup(groupLayout.createSequentialGroup()
+							.addGap(6)
+							.addComponent(btnEnter))
+						.addComponent(saveNameField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(lblEnterSaveFile))
+					.addContainerGap(173, Short.MAX_VALUE))
+		);
+		groupLayout.setVerticalGroup(
+			groupLayout.createParallelGroup(Alignment.LEADING)
+				.addGroup(groupLayout.createSequentialGroup()
+					.addGap(76)
+					.addComponent(lblEnterSaveFile)
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addComponent(saveNameField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addComponent(btnEnter)
+					.addContainerGap(117, Short.MAX_VALUE))
+		);
+		getFrmSaveFileName().getContentPane().setLayout(groupLayout);
+	}
+
+	/**
+	 * @return the frmSaveFileName
+	 */
+	public JFrame getFrmSaveFileName() {
+		return frmSaveFileName;
+	}
+
+	/**
+	 * @param frmSaveFileName the frmSaveFileName to set
+	 */
+	public void setFrmSaveFileName(JFrame frmSaveFileName) {
+		this.frmSaveFileName = frmSaveFileName;
+	}
+
+	/**
+	 * @return the newname
+	 */
+	public String getNewname() {
+		return newname;
+	}
+
+	/**
+	 * @param newname the newname to set
+	 */
+	public void setNewname(String newname) {
+		this.newname = newname;
+	}
+}

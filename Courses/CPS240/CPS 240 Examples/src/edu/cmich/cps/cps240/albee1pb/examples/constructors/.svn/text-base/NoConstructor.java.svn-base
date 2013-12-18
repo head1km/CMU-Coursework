@@ -1,0 +1,56 @@
+/**
+ * NoConstructor
+ * 
+ * @author albee
+ *
+ * @version version
+ *
+ * Aug 28, 2011
+ * 
+ */
+package edu.cmich.cps.cps240.albee1pb.examples.constructors;
+
+/**
+ * Provides a class that uses the implicit default constructor.
+ *
+ * @author albee
+ * @version $Id$
+ */
+public class NoConstructor extends ParentClass {
+	private int attribute = 0;
+
+	/**
+	 * Returns the attribute value.
+	 * 
+	 * @return the attribute
+	 * 
+	 * @see #setAttribute
+	 */
+	public int getAttribute() {
+		return this.attribute;
+	}
+
+	/**
+	 * Specifies the attribute value.
+	 * 
+	 * @param attribute the attribute to set
+	 * 
+	 * @see #getAttribute
+	 */
+	public void setAttribute(int attribute) {
+		this.attribute = attribute;
+	}
+
+
+	/**
+	 * Simple driver.
+	 * 
+	 * @param args ignored
+	 */
+	public static void main(String[] args){
+		NoConstructor nc = new NoConstructor();
+		System.out.println(nc);
+		
+	}
+	
+}

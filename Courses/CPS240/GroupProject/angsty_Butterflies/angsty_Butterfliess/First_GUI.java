@@ -1,0 +1,89 @@
+package angsty_Butterfliess;
+
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.applet.*;
+
+
+
+
+@SuppressWarnings("serial")
+public class First_GUI<getImage> extends Applet implements ActionListener {
+
+	// A Button to click
+	Button Rubric;
+	Button GradeSheet;
+
+	// TextArea Text;
+	public void init() {
+
+		// Tell the applet not to use a layout manager.
+		setSize(500, 500);
+		setLayout(null);
+
+		// initialze the button and give it a text.
+		Rubric = new Button("Rubric Editor");
+		GradeSheet = new Button("Grade Sheet Editor");
+		TextArea text = new TextArea("Please Choose one of the following");
+
+		// now we will specify the positions of the GUI components.
+		// this is done by specifying the x and y coordinate and
+		// the width and height.
+		Rubric.setBounds(100, 275, 100, 30);
+		GradeSheet.setBounds(230, 275, 150, 30);
+		text.setBounds(100, 225, 300, 50);
+		text.setEditable(false);
+		(text).getScrollbarVisibility();
+		// now that all is set we can add these components to the applet
+		add(text);
+		add(Rubric);
+		add(GradeSheet);
+		Rubric.addActionListener(this);
+		GradeSheet.addActionListener(this);
+
+	}
+
+	public void paint(Graphics g) {
+		// method to draw text on screen
+		// String first, then x and y coordinate.
+
+	}
+
+	public void actionPerformed(ActionEvent evt) {
+
+		if (evt.getSource() == Rubric) {
+			Rubric.setLabel("Loading...");
+			try {
+				Thread.sleep((1000));
+				
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			removeAll();
+
+			@SuppressWarnings("unused")
+			RubricEditor_GUI RE = new RubricEditor_GUI();
+
+		}
+
+		else if (evt.getSource() == GradeSheet) {
+
+			// Change the text on the button for fun
+			GradeSheet.setLabel("Loading...");
+			try {
+				Thread.sleep((1000));
+			} catch (InterruptedException e) {
+
+				e.printStackTrace();
+			}
+			removeAll();
+
+			@SuppressWarnings("unused")
+			GradeSheetEditor_GUI GSE = new GradeSheetEditor_GUI();
+
+		}
+
+	}
+}

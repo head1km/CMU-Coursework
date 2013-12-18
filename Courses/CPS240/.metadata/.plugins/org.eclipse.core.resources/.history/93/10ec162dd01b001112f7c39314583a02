@@ -1,0 +1,343 @@
+/**
+ * Roxanne Harris, Alexander Brya, Kyle Head, Ben Lubitz
+ * CPS 240
+ * Assignment 8
+ */
+package angsty_Butterfliess;
+
+import java.beans.XMLDecoder;
+import java.beans.XMLEncoder;
+import java.io.BufferedInputStream;
+import java.io.BufferedOutputStream;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStream;
+import java.io.OutputStreamWriter;
+import java.io.UnsupportedEncodingException;
+import java.util.Date;
+
+/**
+ * GradeSheetEditor performs basic edits on the Gradesheet class. It implements
+ * the Editor interface. 
+ *
+ */
+public class GradeSheetEditor extends GradeSheet implements Editor {
+
+	private GradeSheet gradesheet = new GradeSheet();
+
+	/**
+	 * Attempts to open a GradeSheet object that has been saved in an XML
+	 * format.
+	 * @throws: FileNotFoundException
+	 */
+	public void Open() {
+//		XMLDecoder d;
+//
+//		try {
+//			d = new XMLDecoder(
+//					new BufferedInputStream(
+//							new FileInputStream("GradeSheetTest.xml")));
+//			Object result = d.readObject();
+//			d.close();
+//		} catch (FileNotFoundException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+		  FileInputStream fis;
+		try {
+			fis = new FileInputStream("GradeSheetBackup.xml");
+			XMLDecoder xdec = new XMLDecoder(fis);
+			GradeSheet newgs = (GradeSheet) xdec.readObject();
+			gradesheet = newgs;
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+	/**
+	 * Resets the Metadata in Student to its default state
+	 */
+	public void editStudent() {
+		String newGlobalid = "";
+		String newStudName = "";
+
+		gradesheet.setGlobalid(newGlobalid);
+		gradesheet.setStudentName(newStudName);
+	}
+
+	/**
+	 * Resets the Metadata in Course to its default state
+	 */
+	public void editCourse(){
+		String newName = "";
+		String newCrn = "";
+		String newTerm = "";
+
+		gradesheet.setCrn(newCrn);
+		gradesheet.setCourseName(newName);
+		gradesheet.setTerm(newTerm);
+	}
+
+	/**
+	 * Resets the Metadata in GradeSheetMetadata to its default state
+	 */
+	public void editMetadata(){
+		String newDescription = "";
+
+		gradesheet.setDescription(newDescription);
+	}
+
+	/**
+	 * Edits question metadata if there are questions, if not it makes them.
+	 */
+	public void editQuestions(Question question){
+		String qDescription = null;
+		int possiblePts = 0;
+		int stuScore = 0;
+		String comment = null;
+
+		if(question != null){
+			question.setDescription(qDescription);
+			question.setPtsPossible(possiblePts);
+		}
+		else {
+			calculateScore(qDescription,possiblePts,stuScore,comment);
+		}
+	}
+
+	/**
+	 * Writes a GradeSheet object into a file of XML format.
+	 * @throws: UnsupportedEncodingException, IOException.
+	 */
+	@Override
+	public void save() {
+//		try {        
+//			OutputStream fout= new FileOutputStream("GradeSheetBackup.xml");
+//			OutputStream bout= new BufferedOutputStream(fout);
+//			OutputStreamWriter out 
+//			= new OutputStreamWriter(bout, "8859_1");
+//
+//			out.write("<?xml version=\"1.0\" ");
+//			out.write("encoding=\"ISO-8859-1\"?>\r\n");  
+//			out.write("userinput\r\n");  
+//			for (int i = 1; i <= 10; i++) {
+//				out.write(toString());
+//			}
+//
+//			out.flush(); 
+//			out.close();
+//		}
+//		catch (UnsupportedEncodingException e) {
+//			System.out.println(
+//					"It done did broke."
+//			);
+//		}
+//		catch (IOException e) {
+//			System.out.println(e.getMessage());        
+//		}
+	    try {
+	        FileOutputStream fos = new FileOutputStream("GradeSheetBackup.xml");
+	        XMLEncoder xenc = new XMLEncoder(fos);
+	        xenc.writeObject(gradesheet);
+	        xenc.flush();
+	        xenc.close();
+	        
+	    }
+	    catch(IOException e) {
+	        e.printStackTrace();
+	    }
+	}
+
+	/**
+	 * Creates a new GradeSheet object to work with the editor
+	 */
+	@Override
+	public GradeSheet create() {
+		gradesheet = new GradeSheet();
+		return gradesheet;
+	}
+
+	/**
+	 * Deletes the current GradeSheet object
+	 */
+	public void delete() {
+		gradesheet = null;
+	}
+
+	/**
+	 * Unused method inherited from Editor
+	 * @return null
+	 */
+	public GradeSheet copy() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	/*
+	 * Methods implemented to obtain information from GradeSheet
+	 */
+	
+	/**
+	 * Changes the course name
+	 */
+	public void setCourseName(String newName) {
+		gradesheet.setCourseName(newName);
+	}
+
+	/**
+	 * Retrieves the course name
+	 */
+	public String getCourseName() {
+		return gradesheet.getCourseName();
+	}
+
+	/**
+	 * Changes the term of the course
+	 */
+	public void setTerm(String newTerm) {
+		gradesheet.setTerm(newTerm);
+	}
+
+	/**
+	 * Retrieves the term of the course
+	 */
+	public String getTerm() {
+		return gradesheet.getTerm();
+	}
+	
+	/**
+	 * Changes the Course Reference Number
+	 */
+	public void setCrn(String newCrn) {
+		gradesheet.setCrn(newCrn);
+	}
+
+	/**
+	 * Retrieves the Course Reference Number
+	 */
+	public String getCrn() {
+		return gradesheet.getCrn();
+	}
+
+	/**
+	 * Changes the name of the student
+	 */
+	public  void setStudentName(String newName) {
+		gradesheet.setStudentName(newName); 
+	}
+
+	/**
+	 * Retrieves the name of the student
+	 */
+	public String getStudentName() {
+		return gradesheet.getStudentName();
+	}
+
+	/**
+	 * Changes the student's global ID
+	 */
+	public void setGlobalid(String newGlobalid) {
+		gradesheet.setGlobalid(newGlobalid);
+	}
+
+	/**
+	 * Retrieves the student's global ID
+	 */
+	public String getGlobalid() {
+		return gradesheet.getGlobalid();
+	}
+
+	/**
+	 * Retrieves the assignment's comments
+	 */
+	public String getComments() {
+		return gradesheet.getComments();
+	}
+
+	/**
+	 * Changes the assignment's comments
+	 */
+	public void setComments(String comments) {
+		gradesheet.setComments(comments);
+	}
+
+	/**
+	 * Retrieves the course object that the GradeSheet uses
+	 */
+	public Course getCourse() {
+		return gradesheet.getCourse();
+	}
+
+	/**
+	 * Retrieves the date the assignment was issued
+	 */
+	public Date getIssued() {
+		return gradesheet.getIssued();
+	}
+
+	/**
+	 * Changes the date the assignment was issued
+	 */
+	public void setIssued(Date issued) {
+		gradesheet.setIssued(issued);
+	}
+
+	/**
+	 * Retrieves the assignment's description
+	 */
+	public String getDescription() {
+		return gradesheet.getDescription();
+	}
+
+	/**
+	 * Changes the assignment's description
+	 */
+	public void setDescription(String description) {
+		gradesheet.setDescription(description);
+	}
+
+	/**
+	 * Retrieves the date the assignment is due
+	 */
+	public Date getDue() {
+		return gradesheet.getDue();
+	}
+
+	/**
+	 * Changes the date the assignment is due
+	 */
+	public void setDue(Date due) {
+		gradesheet.setDue(due);
+	}
+
+	/**
+	 * Retrieves the assignment number
+	 */
+	public String getAssignNumber() {
+		return gradesheet.getAssignNumber();
+	}
+
+	/**
+	 * Changes the assignment number
+	 */
+	public void setAssignNumber(String assignNumber) {
+		gradesheet.setAssignNumber(assignNumber);
+	}
+
+	/**
+	 * Retrieves the name of the assignment
+	 */
+	public String getName() {
+		return gradesheet.getName();
+	}
+
+	/**
+	 * Changes the name of the assignment
+	 */
+	public void setName(String name){
+		gradesheet.setName(name);
+	}
+}

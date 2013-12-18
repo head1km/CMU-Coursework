@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="angsty_Butterfliess.RubricEditor"/>
+<fullyQualifiedTypeName name="angsty_Butterfliess.Rubric"/>
+<fullyQualifiedTypeName name="java.io.BufferedReader"/>
+<fullyQualifiedTypeName name="java.io.InputStreamReader"/>
+<fullyQualifiedTypeName name="java.io.StringReader"/>
+<fullyQualifiedTypeName name="java.util.Date"/>
+<fullyQualifiedTypeName name="java.text.Format"/>
+<fullyQualifiedTypeName name="java.text.SimpleDateFormat"/>
+<fullyQualifiedTypeName name="java.beans.XMLEncoder"/>
+<fullyQualifiedTypeName name="angsty_Butterfliess.RubricMetadata"/>
+<fullyQualifiedTypeName name="java.lang.System"/>
+<fullyQualifiedTypeName name="angsty_Butterfliess.Rubric_Editor"/>
+<fullyQualifiedTypeName name="javax.swing.JFrame"/>
+</qualifiedTypeNameHistroy>

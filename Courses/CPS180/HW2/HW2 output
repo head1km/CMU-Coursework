@@ -1,0 +1,13 @@
+What is your name?james
+How much was your initial balance?1000
+What is your annual interest rate?.02
+james, here is your account statement:
+
+Initial Balance:		 $1000.00
+Annual Interest Rate:		     0.02
+
+Balance (end of first year):	 $1020.00
+Balance (end of second year):	 $1040.40
+Balance (end of third year):	 $1061.21
+
+Have a nice day!

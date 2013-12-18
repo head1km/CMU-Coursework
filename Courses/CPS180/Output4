@@ -1,0 +1,17 @@
+Welcome to the theater! Our current movies are:
+Movie                Adult Price(Evening)     Adult Price(Day)       Children Price      Movie id
+Alpha And Omega            8.75                 7.00                 6.50                    1
+Casablanca                 8.75                 7.00                 6.50                    2
+Going The Distance         8.75                 7.00                 6.50                    3
+The Last Exorcism          8.75                 7.00                 6.50                    4
+To select a movie enter the movie id.
+2
+You have selected Casablanca
+How many adult tickets would you like? 3
+How many children tickets would you like? 1
+Which showing would you like to see?
+day
+Confirm showing price: 7.00
+Your total is $27.00
+Enter your payment: $30
+your change is $3.00 and here are your 3 adult tickets and 1 child tickets. Enjoy the show.

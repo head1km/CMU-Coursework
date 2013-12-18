@@ -1,0 +1,18 @@
+-- VERSION_3
+-- START DISKCACHE
+/Users/khead90/Documents/code/cps280s/.metadata/.plugins/org.eclipse.core.resources/.projects/PyFizzBuzz/com.python.pydev.analysis/v1_indexcache
+.v1_indexcache
+fizzbuzz|0|/Users/khead90/Documents/code/cps280s/PyFizzBuzz/fizzbuzz.py
+-- END DISKCACHE
+-- START DICTIONARY
+1
+1=fizzbuzz
+-- END DICTIONARY
+-- START TREE 1
+2
+fiz|1|fizzbuzz!10@
+mai|1|main!10@
+-- END TREE
+-- START TREE 2
+0
+-- END TREE

@@ -1,0 +1,111 @@
+/*
+ * Roxanne Harris Alex Brya, Ben lubitz, Kyle Head
+ * Kyle Head
+ * CPS 240
+ * Assignment 8
+ * 11/7/11
+ */
+package angsty_Butterfliess;
+
+import java.beans.XMLDecoder;
+import java.beans.XMLEncoder;
+import java.io.*;
+
+public class RubricEditor {
+
+	public Rubric myRubric;
+
+	// method in which will create a Rubric to edit but is not saved until save
+	// command within GUI is pressed
+	public Rubric create() {
+		Rubric myRubric = new Rubric();
+		return myRubric;
+	}
+
+	// Edits the Rubric using the GUI to create the rubric
+	public void edit() {
+	}
+
+	// makes a shallow copy of the Rubric
+	public Rubric copy() {
+		Rubric rubricCopy = myRubric;
+		return rubricCopy;
+	}
+
+	// Nulls out the rubric file to create a delete file
+	public void delete() {
+		myRubric = null;
+	}
+
+	// method used by GUI once GUI is implemented
+	public void save(String string) {
+		
+	    //create the objects necessary for writing to a file
+		File xmlfile= new File("Text.xml");
+	    BufferedWriter writer = null;
+	    try {
+	        writer = new BufferedWriter(new FileWriter(xmlfile)); 
+	    }
+	    catch (IOException e) {
+	        e.printStackTrace();
+	    }
+	     
+	     
+	    //this is the bit where you write your XML to the file
+	    try {
+	        FileOutputStream fos = new FileOutputStream("new.xml");
+	        XMLEncoder xenc = new XMLEncoder(fos);
+	        xenc.writeObject(myRubric);
+	        
+	    }
+	    catch(IOException e) {
+	        e.printStackTrace();
+	    }
+	     
+	    //close the file (this is important)
+	    try {
+	        writer.close();
+	    }
+	    catch(IOException e) {
+	        e.printStackTrace();
+	    }
+
+
+//		try {
+//			
+//			OutputStream fout = new FileOutputStream("Test.xml");
+//			OutputStream bout = new BufferedOutputStream(fout);
+//			OutputStreamWriter out = new OutputStreamWriter(bout, "8859_1");
+//
+//			out.write("<?xml version=\"1.0\" ");
+//			out.write("encoding=\"ISO-8859-1\"?>\r\n");
+//			out.write("userinput\r\n");
+//			for (int i = 1; i <= 10; i++) {
+//
+//				out.write(toString());
+//
+//			}
+//
+//			out.flush();
+//			out.close();
+//		} catch (UnsupportedEncodingException e) {
+//			System.out.println("It done did broke.");
+//		} catch (IOException e) {
+//			System.out.println(e.getMessage());
+//		}
+	}
+
+	public void open() {
+		XMLDecoder d;
+
+		try {
+			d = new XMLDecoder(new BufferedInputStream(new FileInputStream(
+					"Test.xml")));
+			Object result = d.readObject();
+			d.close();
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+}

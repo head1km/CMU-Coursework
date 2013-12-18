@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/cps240_22161280/!svn/ver/308/trunk/examples/src/gof/decorator
+END
+Disemvowel.java
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/cps240_22161280/!svn/ver/201/trunk/examples/src/gof/decorator/Disemvowel.java
+END
+Thing.java
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/cps240_22161280/!svn/ver/227/trunk/examples/src/gof/decorator/Thing.java
+END
+ThingDecorator.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/cps240_22161280/!svn/ver/227/trunk/examples/src/gof/decorator/ThingDecorator.java
+END
+package.html
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/cps240_22161280/!svn/ver/201/trunk/examples/src/gof/decorator/package.html
+END
+Shout.java
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/cps240_22161280/!svn/ver/308/trunk/examples/src/gof/decorator/Shout.java
+END
+PrintableThing.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/cps240_22161280/!svn/ver/201/trunk/examples/src/gof/decorator/PrintableThing.java
+END
+ExerciseThing.java
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/cps240_22161280/!svn/ver/308/trunk/examples/src/gof/decorator/ExerciseThing.java
+END
+StripPunctuation.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/cps240_22161280/!svn/ver/201/trunk/examples/src/gof/decorator/StripPunctuation.java
+END

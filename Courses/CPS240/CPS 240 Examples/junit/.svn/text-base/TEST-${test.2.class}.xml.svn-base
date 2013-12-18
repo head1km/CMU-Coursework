@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite errors="1" failures="0" hostname="demitasse" name="${test.2.class}" tests="1" time="0.0" timestamp="2011-09-30T04:14:31">
+  <properties>
+    <property name="java.vendor" value="Apple Inc." />
+    <property name="sun.java.launcher" value="SUN_STANDARD" />
+    <property name="eclipse.pdebuild.templates" value="/Applications/eclipse/plugins/org.eclipse.pde.build_3.7.0.v20110512-1320/templates//" />
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers" />
+    <property name="os.name" value="Mac OS X" />
+    <property name="sun.boot.class.path" value="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/jsfd.jar:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/classes.jar:/System/Library/Frameworks/JavaVM.framework/Frameworks/JavaRuntimeSupport.framework/Resources/Java/JavaRuntimeSupport.jar:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/ui.jar:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/laf.jar:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/sunrsasign.jar:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/jsse.jar:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/jce.jar:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/charsets.jar" />
+    <property name="java.vm.specification.vendor" value="Sun Microsystems Inc." />
+    <property name="test.failed" value="true" />
+    <property name="ant.home" value="/Applications/eclipse/plugins/org.apache.ant_1.8.2.v20110505-1300" />
+    <property name="java.runtime.version" value="1.6.0_26-b03-383-11A511" />
+    <property name="user.name" value="albee" />
+    <property name="awt.nativeDoubleBuffering" value="true" />
+    <property name="build.dir" value="/Users/albee/Documents/Teaching/Fall_2011/CPS_240/Documents/eclipse/CPS 240 Examples/bin" />
+    <property name="user.language" value="en" />
+    <property name="sun.boot.library.path" value="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Libraries" />
+    <property name="ant.project.default-target" value="all" />
+    <property name="ant.project.name" value="doccheck runner" />
+    <property name="java.version" value="1.6.0_26" />
+    <property name="user.timezone" value="" />
+    <property name="ant.file.doccheck runner" value="/Users/albee/Development/Tools/Ant/build.xml" />
+    <property name="sun.arch.data.model" value="64" />
+    <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16" />
+    <property name="java.endorsed.dirs" value="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home/lib/endorsed" />
+    <property name="sun.cpu.isalist" value="" />
+    <property name="sun.jnu.encoding" value="MacRoman" />
+    <property name="file.encoding.pkg" value="sun.io" />
+    <property name="file.separator" value="/" />
+    <property name="java.specification.name" value="Java Platform API Specification" />
+    <property name="java.class.version" value="50.0" />
+    <property name="user.country" value="US" />
+    <property name="java.home" value="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home" />
+    <property name="doc.check.classpath" value="/Users/albee/Development/Java/doccheck1.2b2/doccheck.jar" />
+    <property name="java.vm.info" value="mixed mode" />
+    <property name="ant.file" value="/Users/albee/Development/Tools/Ant/build.xml" />
+    <property name="os.version" value="10.7.1" />
+    <property name="path.separator" value=":" />
+    <property name="java.vm.version" value="20.1-b02-383" />
+    <property name="ant.library.dir" value="/Applications/eclipse/plugins/org.apache.ant_1.8.2.v20110505-1300/lib" />
+    <property name="java.awt.printerjob" value="apple.awt.CPrinterJob" />
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle" />
+    <property name="awt.toolkit" value="apple.awt.CToolkit" />
+    <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16" />
+    <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16" />
+    <property name="eclipse.pdebuild.scripts" value="/Applications/eclipse/plugins/org.eclipse.pde.build_3.7.0.v20110512-1320/scripts//" />
+    <property name="user.home" value="/Users/albee" />
+    <property name="java.specification.vendor" value="Sun Microsystems Inc." />
+    <property name="junit.dir" value="/Users/albee/Documents/Teaching/Fall_2011/CPS_240/Documents/eclipse/CPS 240 Examples/junit" />
+    <property name="java.library.path" value=".:/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java" />
+    <property name="java.vendor.url" value="http://www.apple.com/" />
+    <property name="ant.file.type.doccheck runner" value="file" />
+    <property name="java.vm.vendor" value="Apple Inc." />
+    <property name="gopherProxySet" value="false" />
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment" />
+    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner ${test.2.class} filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true logtestlistenerevents=false formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,/Users/albee/Documents/Teaching/Fall_2011/CPS_240/Documents/eclipse/CPS 240 Examples/junit/TEST-${test.2.class}.xml crashfile=/Users/albee/Development/Tools/Ant/junitvmwatcher7502614299454089295.properties propsfile=/Users/albee/Development/Tools/Ant/junit5735810480318444278.properties" />
+    <property name="java.class.path" value="/Users/albee/Documents/Teaching/Fall_2011/CPS_240/Documents/eclipse/CPS 240 Examples/bin:/Applications/eclipse/plugins/org.junit_4.8.2.v4_8_2_v20110321-1705/junit.jar:/Applications/eclipse/plugins/org.hamcrest.core_1.1.0.v20090501071000.jar:/Applications/eclipse/plugins/org.apache.ant_1.8.2.v20110505-1300/lib/ant-launcher.jar:/Applications/eclipse/plugins/org.apache.ant_1.8.2.v20110505-1300/lib/ant.jar:/Applications/eclipse/plugins/org.apache.ant_1.8.2.v20110505-1300/lib/ant-junit.jar:/Applications/eclipse/plugins/org.apache.ant_1.8.2.v20110505-1300/lib/ant-junit4.jar" />
+    <property name="ant.version" value="Apache Ant(TM) version 1.8.2 compiled on December 20 2010" />
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification" />
+    <property name="java.vm.specification.version" value="1.0" />
+    <property name="sun.cpu.endian" value="little" />
+    <property name="sun.os.patch.level" value="unknown" />
+    <property name="eclipse.pdebuild.home" value="/Applications/eclipse/plugins/org.eclipse.pde.build_3.7.0.v20110512-1320/.//" />
+    <property name="java.io.tmpdir" value="/var/folders/bj/17nvrbf539g1680qs4v71g040000gn/T/" />
+    <property name="java.vendor.url.bug" value="http://bugreport.apple.com/" />
+    <property name="mrj.build" value="11A511" />
+    <property name="os.arch" value="x86_64" />
+    <property name="java.awt.graphicsenv" value="apple.awt.CGraphicsEnvironment" />
+    <property name="java.ext.dirs" value="/Library/Java/Extensions:/System/Library/Java/Extensions:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home/lib/ext" />
+    <property name="mrj.version" value="1070.1.6.0_26-383" />
+    <property name="user.dir" value="/Users/albee/Development/Tools/Ant" />
+    <property name="line.separator" value="&#xa;" />
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM" />
+    <property name="basedir" value="/Users/albee/Development/Tools/Ant" />
+    <property name="doc.api.dir" value="/Users/albee/Documents/Teaching/Fall_2011/CPS_240/Documents/eclipse/CPS 240 Examples/doc" />
+    <property name="ant.java.version" value="1.6" />
+    <property name="ant.core.lib" value="/Applications/eclipse/plugins/org.apache.ant_1.8.2.v20110505-1300/lib/ant.jar" />
+    <property name="doc.check.dir" value="/Users/albee/Documents/Teaching/Fall_2011/CPS_240/Documents/eclipse/CPS 240 Examples/doccheck" />
+    <property name="file.encoding" value="MacRoman" />
+    <property name="java.specification.version" value="1.6" />
+    <property name="src.dir" value="/Users/albee/Documents/Teaching/Fall_2011/CPS_240/Documents/eclipse/CPS 240 Examples/src" />
+    <property name="ant.project.invoked-targets" value="all" />
+  </properties>
+  <error message="${test.2.class}" type="java.lang.ClassNotFoundException">java.lang.ClassNotFoundException: ${test.2.class}
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:202)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:190)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:306)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:301)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:247)
+	at java.lang.Class.forName0(Native Method)
+	at java.lang.Class.forName(Class.java:169)
+</error>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

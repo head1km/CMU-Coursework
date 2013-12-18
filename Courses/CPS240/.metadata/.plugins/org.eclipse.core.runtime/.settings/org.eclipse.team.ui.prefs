@@ -1,0 +1,7 @@
+#Tue Nov 29 08:35:43 EST 2011
+org.eclipse.team.ui.sychronizing_default_participant_sec_id=1322545276483
+org.eclipse.team.ui.sychronizing_default_perspective_to_show=always
+eclipse.preferences.version=1
+pref_generichistory_view_linking=true
+org.eclipse.team.ui.first_time=false
+org.eclipse.team.ui.sychronizing_default_participant=org.eclipse.team.svn.ui.synchronize.update.SynchronizeModelParticipant

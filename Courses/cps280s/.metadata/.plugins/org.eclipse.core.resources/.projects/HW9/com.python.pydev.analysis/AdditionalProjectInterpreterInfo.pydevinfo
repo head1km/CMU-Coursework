@@ -1,0 +1,27 @@
+-- VERSION_3
+-- START DISKCACHE
+/Users/khead90/Documents/code/cps280s/.metadata/.plugins/org.eclipse.core.resources/.projects/HW9/com.python.pydev.analysis/v1_indexcache
+.v1_indexcache
+tictactoe|0|/Users/khead90/Documents/code/cps280s/HW9/tictactoe.py
+-- END DISKCACHE
+-- START DICTIONARY
+1
+1=tictactoe
+-- END DICTIONARY
+-- START TREE 1
+11
+che|1|checkWin!10@
+dou|1|doubles!10@
+get|2|getinput!10@getfirst!10@
+mai|1|main!10@
+pla|1|playagain!10@
+sim|1|simulate!10@
+sin|1|single!10@
+sta|1|startGame!10@
+tie|1|tie!10@
+win|1|win!10@
+wri|1|writeboard!10@
+-- END TREE
+-- START TREE 2
+0
+-- END TREE

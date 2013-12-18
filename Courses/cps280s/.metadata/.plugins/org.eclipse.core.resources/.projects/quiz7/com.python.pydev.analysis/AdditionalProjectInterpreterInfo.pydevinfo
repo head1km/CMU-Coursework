@@ -1,0 +1,20 @@
+-- VERSION_3
+-- START DISKCACHE
+/Users/khead90/Documents/code/cps280s/.metadata/.plugins/org.eclipse.core.resources/.projects/quiz7/com.python.pydev.analysis/v1_indexcache
+.v1_indexcache
+quiz7|0|/Users/khead90/Documents/code/cps280s/quiz7/quiz7.py
+-- END DISKCACHE
+-- START DICTIONARY
+1
+1=quiz7
+-- END DICTIONARY
+-- START TREE 1
+4
+mai|1|main!10@
+rem|1|removeNull!10@
+rep|1|replace!10@
+tup|1|tupe!10@
+-- END TREE
+-- START TREE 2
+0
+-- END TREE

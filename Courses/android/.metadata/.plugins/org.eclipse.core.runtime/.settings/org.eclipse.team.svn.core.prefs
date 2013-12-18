@@ -1,0 +1,4 @@
+eclipse.preferences.version=1
+externalMigrateFromAuthorizationDatabase/isMigrated=true
+migrateFromAuthorizationDatabase/isMigrated=true
+repositories/60609b1a397600121ecf9a3526595df9=60609b1a397600121ecf9a3526595df9;https\://cps-scg.cps.cmich.edu/scg_mobile/trunk/;https\://cps-scg.cps.cmich.edu/scg_mobile/trunk/;branches;tags;trunk;true;a4e8112e-53fc-4181-95c5-1cb6d7762583;https\://cps-scg.cps.cmich.edu/scg_mobile;;false;<https\://cps-scg.cps.cmich.edu\:443> Subversion scg_mobile on cps-scg;;0

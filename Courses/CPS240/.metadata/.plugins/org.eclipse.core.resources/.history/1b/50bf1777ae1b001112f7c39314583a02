@@ -1,0 +1,31 @@
+package angsty_Butterfliess;
+
+import java.awt.EventQueue;
+
+
+
+public class RubricEditor_GUI extends StartApplication {
+	/**
+	 * Launch the application.
+	 */
+
+	/**
+	 * Create the application.
+	 */
+	public RubricEditor_GUI() {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					Rubric_Editor window = new Rubric_Editor();
+					window.getFrmRubricEditor().setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+		
+		
+	
+		
+	}
+}

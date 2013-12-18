@@ -1,0 +1,117 @@
+/**
+ * By Kyle Head
+ */
+package angsty_Butterfliess;
+
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JTextField;
+import java.awt.BorderLayout;
+import javax.swing.GroupLayout;
+import javax.swing.GroupLayout.Alignment;
+import javax.swing.LayoutStyle.ComponentPlacement;
+import javax.swing.JLabel;
+import java.awt.event.FocusAdapter;
+import java.awt.event.FocusEvent;
+import javax.swing.JButton;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+
+/**
+ * @author head1km
+ *
+ */
+public class saveOption {
+
+	private JFrame frmSaveFileName;
+	private JTextField textField_1;
+	private String newname;
+	private JButton btnEnter;
+
+	/**
+	 * @return the newname
+	 */
+	public String getNewname() {
+		return newname;
+	}
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					saveOption window = new saveOption();
+					window.frmSaveFileName.setVisible(true);
+					
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the application.
+	 */
+	public saveOption() {
+		initialize();
+	}
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+		frmSaveFileName = new JFrame();
+		frmSaveFileName.setTitle("Save file name");
+		frmSaveFileName.setBounds(100, 100, 450, 300);
+		frmSaveFileName.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+		textField_1 = new JTextField();
+		textField_1.addFocusListener(new FocusAdapter() {
+			@Override
+			public void focusLost(FocusEvent arg0) {
+				newname = textField_1.getText();
+				frmSaveFileName.setVisible(false);
+			}
+		});
+		textField_1.setColumns(10);
+		
+		JLabel lblEnterSaveFile = new JLabel("Enter save file name:");
+		
+		btnEnter = new JButton("Enter");
+		btnEnter.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				frmSaveFileName.dispose();
+			}
+		});
+		GroupLayout groupLayout = new GroupLayout(frmSaveFileName.getContentPane());
+		groupLayout.setHorizontalGroup(
+			groupLayout.createParallelGroup(Alignment.LEADING)
+				.addGroup(groupLayout.createSequentialGroup()
+					.addGap(143)
+					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+						.addGroup(groupLayout.createSequentialGroup()
+							.addGap(6)
+							.addComponent(btnEnter))
+						.addComponent(textField_1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(lblEnterSaveFile))
+					.addContainerGap(173, Short.MAX_VALUE))
+		);
+		groupLayout.setVerticalGroup(
+			groupLayout.createParallelGroup(Alignment.LEADING)
+				.addGroup(groupLayout.createSequentialGroup()
+					.addGap(76)
+					.addComponent(lblEnterSaveFile)
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addComponent(textField_1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addComponent(btnEnter)
+					.addContainerGap(117, Short.MAX_VALUE))
+		);
+		frmSaveFileName.getContentPane().setLayout(groupLayout);
+	}
+}

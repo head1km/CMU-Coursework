@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rubric xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="file:rubric.xsd">
+    <course>
+        <name>Object Oriented Programming</name>
+        <term>Fall 2011</term>
+        <crn>22161280</crn>
+    </course>
+    <assignment>
+        <number>02</number>
+        <issued>9/8/2011</issued>
+        <due>9/13/2011</due>
+        <description>Initial requirements document for rubric system.</description>
+    </assignment>
+    <questions>
+        <question default_score="2.0">
+            <description>Name</description>
+            <value>2</value>
+        </question>
+        <question>
+            <description>What is a rubric?</description>
+            <value>2</value>
+        </question>
+        <question>
+            <description>How a rubric system could be used for grading?</description>
+            <value>3</value>
+        </question>
+        <question>
+            <description>Major components</description>
+            <value>3</value>
+        </question>
+    </questions>
+</rubric>

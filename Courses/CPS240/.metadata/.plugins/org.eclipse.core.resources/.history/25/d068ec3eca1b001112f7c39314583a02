@@ -1,0 +1,256 @@
+package angsty_Butterfliess;
+
+import java.awt.EventQueue;
+
+//import javax.swing.DefaultListModel;
+import javax.swing.JFrame;
+import javax.swing.GroupLayout;
+import javax.swing.GroupLayout.Alignment;
+import javax.swing.JTextField;
+import javax.swing.JLabel;
+import javax.swing.LayoutStyle.ComponentPlacement;
+import javax.swing.JButton;
+//import javax.swing.ListSelectionModel;
+
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+//import javax.swing.JList;
+import javax.swing.JTextArea;
+import javax.swing.JFormattedTextField;
+import java.awt.event.FocusAdapter;
+import java.awt.event.FocusEvent;
+import java.awt.Font;
+
+public class QuestionGUI extends Rubric_Editor {
+	
+//	static QuestionFactory qFactory = new QuestionFactory();
+//	static private Question[] questions;
+	int questionsMade = 0;
+	
+//	int totalPoints;
+	private JFrame frame;
+	private JTextField txtGradingItem;
+	private JTextField txtTotalPoints;
+	private JFormattedTextField formattedTextField;
+//	private DefaultListModel model = new DefaultListModel();
+	private JTextArea textArea;
+	private JTextArea qArea;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					QuestionGUI window = new QuestionGUI();
+					window.frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the application.
+	 */
+	public QuestionGUI() {
+		initialize();
+	}
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+		frame = new JFrame();
+		frame.setBounds(100, 100, 641, 515);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+		txtGradingItem = new JTextField();
+		txtGradingItem.addFocusListener(new FocusAdapter() {
+			@Override
+			public void focusLost(FocusEvent e) {
+				Rubric.qFactory.aQuestion.setDescription(txtGradingItem.getText());
+			}
+			@Override
+			public void focusGained(FocusEvent e) {
+				txtGradingItem.selectAll();
+			}
+		});
+		txtGradingItem.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Rubric.qFactory.aQuestion.setDescription(txtGradingItem.getText());
+			}
+		});
+		txtGradingItem.selectAll();
+		txtGradingItem.setColumns(35);
+		
+		JButton btnAddNewGrading = new JButton("Commit Grading Item to Rubric");
+		btnAddNewGrading.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		btnAddNewGrading.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				Rubric.qFactory.setQuestion(Rubric.qFactory.aQuestion.getDescription(), Rubric.qFactory.aQuestion.getPtsPossible());
+				qArea.append(Rubric.qFactory.aQuestion.getDescription());
+				qArea.append("\n");
+				re.myRubric.createQuestion(Rubric.qFactory.aQuestion.getDescription(), Rubric.qFactory.aQuestion.getPtsPossible());
+//				Rubric.questions.add(Rubric.qFactory.getQuestion(Rubric.qFactory.aQuestion.getDescription(), Rubric.qFactory.aQuestion.getPtsPossible()));
+//				if (model.firstElement() == "Add a Question") {
+//					model.set(0, allQuestions.aQuestion.getDescription());
+//				}
+//				else {
+//					addToList();
+//				}
+//				
+				textArea.append(Integer.toString(Rubric.qFactory.aQuestion.getPtsPossible()));
+				textArea.append("\n");
+//				totalPoints += Rubric.qFactory.aQuestion.getPtsPossible();
+//				txtTotalPoints.setText(Integer.toString(totalPoints));
+				txtTotalPoints.setText(Integer.toString(re.myRubric.getTotalPtsPossible()));
+				
+				System.out.println("Question added to map");
+			}
+		});
+		
+		
+		JLabel lblRubricQuestionsSelect = new JLabel("Rubric Questions");
+		
+		textArea = new JTextArea();
+		textArea.setFont(new Font("Tahoma", Font.BOLD, 13));
+		
+		txtTotalPoints = new JTextField();
+		txtTotalPoints.setColumns(10);
+		
+		JLabel lblTotalPoints = new JLabel("Total Points");
+		
+		JLabel lblGradingItem = new JLabel("Grading Item:");
+		
+		JLabel lblPossiblePoints = new JLabel("Possible Points:");
+		
+		JLabel lblPossiblePoints_1 = new JLabel("Possible Points");
+		
+		formattedTextField = new JFormattedTextField();
+		formattedTextField.addFocusListener(new FocusAdapter() {
+			@Override
+			public void focusLost(FocusEvent e) {
+				Rubric.qFactory.aQuestion.setPtsPossible(Integer.parseInt(formattedTextField.getText()));
+			}
+			@Override
+			public void focusGained(FocusEvent e) {
+				formattedTextField.selectAll();
+			}
+		});
+		formattedTextField.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Rubric.qFactory.aQuestion.setPtsPossible(Integer.parseInt(formattedTextField.getText()));
+				
+			}
+		});
+//		model.addElement("Add a Question");
+		
+		qArea = new JTextArea();
+		qArea.setFont(new Font("Tahoma", Font.BOLD, 13));
+		
+//		JButton btnEdit = new JButton("Edit");
+//		btnEdit.addMouseListener(new MouseAdapter() {
+//			@Override
+//			public void mouseClicked(MouseEvent e) {
+//				int i = list.getSelectedIndex();
+//				System.out.println(i);
+//				if (i == 0) allQuestions.setQuestion((String) model.firstElement(), 1);
+//				else allQuestions.setQuestion((String) model.get(i - 1), 1);
+//				System.out.println(allQuestions.aQuestion.getDescription());
+//				txtGradingItem.setText(allQuestions.aQuestion.getDescription());
+//				txtGradingItem.selectAll();
+//				formattedTextField.setText(Integer.toString(allQuestions.aQuestion.getPtsPossible()));
+//				formattedTextField.selectAll();
+//				
+//			}
+//		});
+		GroupLayout groupLayout = new GroupLayout(frame.getContentPane());
+		groupLayout.setHorizontalGroup(
+			groupLayout.createParallelGroup(Alignment.LEADING)
+				.addGroup(groupLayout.createSequentialGroup()
+					.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING)
+						.addGroup(groupLayout.createSequentialGroup()
+							.addContainerGap()
+							.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+								.addGroup(groupLayout.createSequentialGroup()
+									.addComponent(lblRubricQuestionsSelect)
+									.addPreferredGap(ComponentPlacement.RELATED))
+								.addGroup(Alignment.TRAILING, groupLayout.createSequentialGroup()
+									.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING)
+										.addComponent(qArea, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 494, Short.MAX_VALUE)
+										.addGroup(groupLayout.createSequentialGroup()
+											.addPreferredGap(ComponentPlacement.RELATED, 438, Short.MAX_VALUE)
+											.addComponent(lblTotalPoints)))
+									.addGap(18)))
+							.addGroup(groupLayout.createParallelGroup(Alignment.LEADING, false)
+								.addComponent(textArea)
+								.addComponent(txtTotalPoints)
+								.addComponent(lblPossiblePoints_1))
+							.addGap(22))
+						.addGroup(Alignment.LEADING, groupLayout.createSequentialGroup()
+							.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING, false)
+								.addGroup(Alignment.LEADING, groupLayout.createSequentialGroup()
+									.addContainerGap()
+									.addComponent(btnAddNewGrading, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+								.addGroup(Alignment.LEADING, groupLayout.createSequentialGroup()
+									.addGap(10)
+									.addGroup(groupLayout.createParallelGroup(Alignment.LEADING, false)
+										.addGroup(groupLayout.createSequentialGroup()
+											.addPreferredGap(ComponentPlacement.RELATED)
+											.addComponent(lblPossiblePoints)
+											.addPreferredGap(ComponentPlacement.UNRELATED)
+											.addComponent(formattedTextField))
+										.addGroup(groupLayout.createSequentialGroup()
+											.addComponent(lblGradingItem)
+											.addGap(18)
+											.addComponent(txtGradingItem, GroupLayout.PREFERRED_SIZE, 519, GroupLayout.PREFERRED_SIZE)))))
+							.addPreferredGap(ComponentPlacement.RELATED, 17, Short.MAX_VALUE)))
+					.addGap(0))
+		);
+		groupLayout.setVerticalGroup(
+			groupLayout.createParallelGroup(Alignment.LEADING)
+				.addGroup(groupLayout.createSequentialGroup()
+					.addGap(18)
+					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
+						.addComponent(lblGradingItem)
+						.addComponent(txtGradingItem, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+					.addGap(8)
+					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
+						.addComponent(lblPossiblePoints)
+						.addComponent(formattedTextField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+					.addPreferredGap(ComponentPlacement.UNRELATED)
+					.addComponent(btnAddNewGrading)
+					.addGap(9)
+					.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING)
+						.addComponent(lblPossiblePoints_1)
+						.addComponent(lblRubricQuestionsSelect))
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
+						.addComponent(qArea, GroupLayout.DEFAULT_SIZE, 310, Short.MAX_VALUE)
+						.addComponent(textArea, GroupLayout.DEFAULT_SIZE, 309, Short.MAX_VALUE))
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
+						.addGap(20)
+						.addComponent(txtTotalPoints, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(lblTotalPoints)))
+		);
+		frame.getContentPane().setLayout(groupLayout);
+		
+		
+		
+		
+	}
+	
+//	public void addToList() {
+//		model.addElement(allQuestions.aQuestion.getDescription());
+//	}
+}

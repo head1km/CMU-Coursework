@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/cps240_22161280/!svn/ver/604/trunk/hw07/head1km/src/edu/cmich/cps/cps240/head1km/hw07/test
+END
+TestRubric.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/cps240_22161280/!svn/ver/609/trunk/hw07/head1km/src/edu/cmich/cps/cps240/head1km/hw07/test/TestRubric.java
+END
+TestRubricEditor.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/cps240_22161280/!svn/ver/609/trunk/hw07/head1km/src/edu/cmich/cps/cps240/head1km/hw07/test/TestRubricEditor.java
+END
+TestGradesheet.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/cps240_22161280/!svn/ver/609/trunk/hw07/head1km/src/edu/cmich/cps/cps240/head1km/hw07/test/TestGradesheet.java
+END
+TestGradesheetEditor.java
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/cps240_22161280/!svn/ver/609/trunk/hw07/head1km/src/edu/cmich/cps/cps240/head1km/hw07/test/TestGradesheetEditor.java
+END
+TestQuestionFactory.java
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/cps240_22161280/!svn/ver/609/trunk/hw07/head1km/src/edu/cmich/cps/cps240/head1km/hw07/test/TestQuestionFactory.java
+END

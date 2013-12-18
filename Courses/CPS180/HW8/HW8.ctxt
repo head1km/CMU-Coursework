@@ -1,0 +1,14 @@
+#BlueJ class context
+comment0.params=args
+comment0.target=void\ main(java.lang.String[])
+comment1.params=a\ b\ c
+comment1.target=void\ Check(double,\ double,\ double)
+comment2.params=a\ b\ c
+comment2.target=void\ calculate(double,\ double,\ double)
+comment3.params=a\ b\ c
+comment3.target=void\ calculate2(double,\ double,\ double)
+comment4.params=x1
+comment4.target=void\ displayAnswer(double)
+comment5.params=x2
+comment5.target=void\ displayAnswer2(double)
+numComments=6

@@ -1,0 +1,47 @@
+/*
+ * CircleShape
+ * 
+ * Author albee
+ * 
+ * $Id$
+ * 
+ * Oct 11, 2011
+ * 
+ */
+package gof.bridge;
+
+/**
+ * @author albee
+ *
+ * @version $Id$
+ * 
+ * From http://en.wikipedia.org/wiki/Bridge_pattern
+ * 
+ */
+/** "Refined Abstraction" */
+class CircleShape implements Shape {
+   private double x, y, radius;
+   private DrawingAPI drawingAPI;
+   
+   public CircleShape(double x, double y, double radius, DrawingAPI drawingAPI) {
+       this.x = x;  this.y = y;  this.radius = radius; 
+       this.drawingAPI = drawingAPI;
+   }
+ 
+   // low-level i.e. Implementation specific
+   public void draw() {
+        drawingAPI.drawCircle(x, y, radius);
+   }   
+   // high-level i.e. Abstraction specific
+   public void resizeByPercentage(double pct) {
+        radius *= pct;
+   }
+
+public DrawingAPI getDrawingAPI() {
+	return drawingAPI;
+}
+
+public void setDrawingAPI(DrawingAPI drawingAPI) {
+	this.drawingAPI = drawingAPI;
+}
+}

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="file:///Users/albee/Documents/Teaching/Support_Software/XML_Rubics/student_gradesheet.css"
+            type="text/css"?><gradesheet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xs="http://www.w3.org/2001/XMLSchema" xsi:noNamespaceSchemaLocation="/Users/albee/Documents/Teaching/Support_Software/XML_Rubics/student_rubric.xsd">
+  <header>
+    <student>
+      <name>Student, J Random</name>
+      <globalid>stude1jr</globalid>
+    </student>
+    <course>
+      <name>Object Oriented Programming</name>
+      <term>Fall 2011</term>
+      <crn>22161280</crn>
+    </course>
+    <assignment>
+      <number>02</number>
+      <issued>9/8/2011</issued>
+      <due>9/13/2011</due>
+      <description>Initial requirements document for rubric system.  </description>
+    </assignment>
+  </header>
+  <questions>
+    <question>
+      <description>Name</description>
+      <earned>2.0</earned>
+      <value>2</value>
+      <comment/>
+    </question>
+    <question>
+      <description>What is a rubric?</description>
+      <earned>2.0</earned>
+      <value>2</value>
+      <comment/>
+    </question>
+    <question>
+      <description>How a rubric system could be used for grading?</description>
+      <earned>3.0</earned>
+      <value>3</value>
+      <comment/>
+    </question>
+    <question>
+      <description>Major components</description>
+      <earned>0</earned>
+      <value>3</value>
+      <comment/>
+    </question>
+  </questions>
+  <comment>Looking Good!</comment>
+</gradesheet>

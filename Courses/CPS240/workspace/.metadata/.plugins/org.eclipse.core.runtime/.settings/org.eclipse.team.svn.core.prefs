@@ -1,0 +1,5 @@
+#Wed Oct 26 22:31:53 EDT 2011
+eclipse.preferences.version=1
+repositories/a0f5bbeea6ef00101c5cea9241101a6f=a0f5bbeea6ef00101c5cea9241101a6f;https\://cps-svn2.cps.cmich.edu/cps240_22161280/;https\://cps-svn2.cps.cmich.edu/cps240_22161280/;branches;tags;trunk;true;079e20c2-29f5-49f7-8926-da6621e90b32;https\://cps-svn2.cps.cmich.edu/cps240_22161280;;false;<https\://cps-svn2.cps.cmich.edu\:443> Subversion cps240_22161280 on cps-svn2;;0
+externalMigrateFromAuthorizationDatabase/isMigrated=true
+migrateFromAuthorizationDatabase/isMigrated=true

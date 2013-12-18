@@ -1,0 +1,39 @@
+package TestCases;
+/**
+ * Roxanne Harris, Alexander Brya, Kyle Head, Ben Lubitz
+ * Kyle Head
+ * CPS 240
+ * Assignment 8
+ */
+
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+import angsty_Butterflies.Question;
+import angsty_Butterflies.QuestionFactory;
+
+public class QuestionFactoryTest {
+	QuestionFactory qFactory = new QuestionFactory();
+	Question q1, q2, q3, q4;
+	String desc1 = "This is question 1.";
+	String desc2 = "This is question 2.";
+	String desc3 = "This is question 3.";
+	int points1 = 5;
+	int points2 = 8;
+	int points3 = 10;
+	int totalq;
+	
+
+	@Test
+	public void testGetQuestion() {
+		q1 = qFactory.getQuestion(desc1, points1);
+		q2 = qFactory.getQuestion(desc2, points2);
+		q3 = qFactory.getQuestion(desc3, points3);
+		q4 = qFactory.getQuestion(desc2, points2);
+		totalq = qFactory.getTotalQuestions();
+		assertTrue("Question Flyweight not working.", totalq == 3);
+	}
+
+}

@@ -1,0 +1,73 @@
+#!/usr/bin/python
+'''
+Created on Nov 19, 2013
+
+@author: head1km
+'''
+import re
+
+def classListToDict(cList, cDict):
+    cList = [line.strip() for line in cList]
+    for item in cList:
+        if item == "----":
+            cList.remove(item)
+    splitIndex = [i for i, x in enumerate(cList) if x == ""]
+    cDict[cList[0]] = cList[1:splitIndex[0]]
+    for num in xrange(len(splitIndex)):
+        if num < len(splitIndex)-2:
+            cDict[cList[splitIndex[num]+1]] = cList[splitIndex[num]+2:splitIndex[num+1]]
+        elif num == len(splitIndex) - 2:
+            cDict[cList[splitIndex[num]+1]] = cList[splitIndex[num]+2:-1]
+    return cDict
+        
+def courseToDict(cList, cDict):
+    cList = [line.strip() for line in cList]
+    for item in cList:
+        if item == "----" or item == "":
+            cList.remove(item)
+    for num in xrange(len(cList)):
+        if int(num % 2) == 0 or num == 0:
+            cDict[cList[num]] = cList[num+1]
+    return cDict
+
+def studentsToDict(students, studentDict):
+    students = [line.strip() for line in students]
+    students = students[2:]
+    splitStudents = []
+    for item in students:
+        splitStudents.append(re.split(" *", item))
+    for item in splitStudents:
+        studentDict[item[-1]] = item[:-1]
+    return studentDict
+
+def printSchedule(classDict, courseDict, studentDict):
+    for skey in studentDict.keys():
+        if len(studentDict[skey]) < 3:
+            print "Name:{0}, {1}".format(studentDict[skey][0], studentDict[skey][-1])
+        else:
+            print "Name:{0}, {1} {2}".format(studentDict[skey][0], studentDict[skey][-1], studentDict[skey][1])
+        print "StudentID:"+skey+"\n"
+        for ckey in classDict.keys():
+            for value in classDict[ckey]:
+                if re.search(skey, value):
+                    print ckey + ":" + courseDict[ckey]
+        print "\ncut here\n" + "-"*24+"\n"
+def main():
+    classDict = {}
+    courseDict = {}
+    studentDict = {}
+    
+    try:
+        classList = open("ClassList", "r").readlines()
+        courses = open("Courses", "r").readlines()
+        students = open("Students", "r").readlines()
+    except IOError as e:
+        print "Cannot open files to create schedule!".format(e.errno, e.strerror)
+        
+    classDict = classListToDict(classList, classDict)    
+    courseDict = courseToDict(courses, courseDict)
+    studentDict = studentsToDict(students, studentDict)
+    printSchedule(classDict, courseDict, studentDict)
+    
+if __name__ == '__main__':
+    main()

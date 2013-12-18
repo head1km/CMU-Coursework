@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<java version="1.6.0_29" class="java.beans.XMLDecoder"> 
+ <object class="angsty_Butterfliess.RubricMetadata"> 
+  <void property="assignNumber"> 
+   <string>34</string> 
+  </void> 
+  <void property="course"> 
+   <object class="angsty_Butterfliess.Course"> 
+    <void property="crn"> 
+     <string>32323</string> 
+    </void> 
+    <void property="name"> 
+     <string>cps 240</string> 
+    </void> 
+    <void property="term"> 
+     <string>fall 2011</string> 
+    </void> 
+   </object> 
+  </void> 
+  <void property="description"> 
+   <string>Enter Description sucky</string> 
+  </void> 
+  <void property="due"> 
+   <object class="java.util.Date"> 
+    <long>1293944520000</long> 
+   </object> 
+  </void> 
+ </object> 
+</java> 

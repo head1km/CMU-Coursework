@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/cps240_22161280/!svn/ver/308/trunk/examples/src/gof/strategy
+END
+Context.java
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/cps240_22161280/!svn/ver/308/trunk/examples/src/gof/strategy/Context.java
+END
+ConcreteStrategySubtract.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/cps240_22161280/!svn/ver/308/trunk/examples/src/gof/strategy/ConcreteStrategySubtract.java
+END
+ConcreteStrategyAdd.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/cps240_22161280/!svn/ver/308/trunk/examples/src/gof/strategy/ConcreteStrategyAdd.java
+END
+StrategyExample.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/cps240_22161280/!svn/ver/308/trunk/examples/src/gof/strategy/StrategyExample.java
+END
+ConcreteStrategyMultply.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/cps240_22161280/!svn/ver/308/trunk/examples/src/gof/strategy/ConcreteStrategyMultply.java
+END
+Strategy.java
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/cps240_22161280/!svn/ver/308/trunk/examples/src/gof/strategy/Strategy.java
+END

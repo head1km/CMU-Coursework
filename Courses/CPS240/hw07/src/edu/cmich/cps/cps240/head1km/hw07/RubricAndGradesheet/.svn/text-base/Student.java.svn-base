@@ -1,0 +1,36 @@
+/*
+ * @author Kyle Head
+ * CPS 240
+ * due 10/26/11
+ */
+package edu.cmich.cps.cps240.head1km.hw07.RubricAndGradesheet;
+
+
+public class Student {
+
+  private String name ;
+
+  private String globalid;
+
+
+//sets the value for student name.
+  public  void setName(String newName) {
+	  this.name = newName;
+  }
+
+  //sets a new globalid.
+  public void setGlobalid(String newGlobalid) {
+	  this.globalid = newGlobalid;
+  }
+
+  //returns student name.
+  public String getName() {
+  return this.name;
+  }
+
+  //returns globalid.
+  public String getGlobalid() {
+  return this.globalid;
+  }
+
+}

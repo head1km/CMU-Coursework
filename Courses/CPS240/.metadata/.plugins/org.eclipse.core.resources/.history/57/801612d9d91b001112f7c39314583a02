@@ -1,0 +1,533 @@
+/**
+ * Most code within this file was auto-generated and thus uncommented.
+ */
+
+package angsty_Butterfliess;
+
+import java.awt.Component;
+import java.awt.EventQueue;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.FocusAdapter;
+import java.awt.event.FocusEvent;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+import org.eclipse.wb.swing.FocusTraversalOnArray;
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.GroupLayout;
+import javax.swing.GroupLayout.Alignment;
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
+import javax.swing.JSeparator;
+import javax.swing.JTextField;
+import javax.swing.JTextPane;
+import javax.swing.LayoutStyle.ComponentPlacement;
+import javax.swing.JList;
+import javax.swing.ListSelectionModel;
+import javax.swing.JTextArea;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+
+
+public class BGSEditor_GUI extends StartApplication{
+	
+	private QuestionFactory qF = new QuestionFactory();
+	private GradeSheetEditor gE;
+	private JFrame frmGradesheetEditor;
+	private JTextField txtName;
+	private JTextField txtAName;
+	private JTextField txtCName;
+	private JTextField txtGlobalId;
+	private JTextField txtNumber;
+	private JTextField txtADescription;
+	private JTextField txtTerm;
+	private JTextField txtReferenceNumber;
+	private JTextField txtQDescription;
+	private JTextField txtPtsEarned;
+	private JTextField txtPtsPossible;
+	private String iDate;
+	private String iMonth = "01";
+	private String iDay = "01";
+	private String iYear = "2011";
+	private String dDate;
+	private String dMonth = "01";
+	private String dDay = "01";
+	private String dYear = "2011";
+	Date issueDate, dueDate;
+	SimpleDateFormat format = new SimpleDateFormat("mm/dd/yyyy");
+	
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		
+		EventQueue.invokeLater(new Runnable() {
+		public void run() {
+				try {
+					BGSEditor_GUI window = new BGSEditor_GUI();
+					window.getFrmGradesheetEditor().setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+			
+	}
+
+	/**
+	 * Create the application.
+	 */
+	public BGSEditor_GUI() {
+		initialize();
+	}
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+		setFrmGradesheetEditor(new JFrame());
+		getFrmGradesheetEditor().setTitle("Gradesheet Editor - Beta");
+		getFrmGradesheetEditor().setBounds(100, 100, 595, 667);
+		getFrmGradesheetEditor().setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+		gE = new GradeSheetEditor();
+		
+		JLabel lblName = new JLabel("Student:");
+		
+		txtName = new JTextField();
+		txtName.setText("Name");
+		txtName.addFocusListener(new FocusAdapter() {
+			@Override
+			public void focusLost(FocusEvent arg0) {
+				gE.setStudentName(txtName.getText());
+			}
+		});
+		txtName.setColumns(10);
+		
+		JLabel lblCourse = new JLabel("Course:");
+		
+		JLabel lblIssueDate = new JLabel("Issue Date:");
+		
+		JLabel lblDueDate = new JLabel("Due Date:");
+		
+		JLabel lblAssignment = new JLabel("Assignment:");
+		
+		txtAName = new JTextField();
+		txtAName.setText("Name");
+		txtAName.addFocusListener(new FocusAdapter() {
+			@Override
+			public void focusLost(FocusEvent arg0) {
+				gE.setName(txtAName.getText());
+			}
+		});
+		txtAName.setColumns(10);
+		
+		txtCName = new JTextField();
+		txtCName.setText("Name");
+		txtCName.addFocusListener(new FocusAdapter() {
+			@Override
+			public void focusLost(FocusEvent arg0) {
+				gE.setCourseName(txtCName.getText());
+			}
+		});
+		txtCName.setColumns(10);
+		
+		JComboBox cbIssueMonth = new JComboBox();
+		cbIssueMonth.addFocusListener(new FocusAdapter() {
+			@Override
+			public void focusLost(FocusEvent arg0) {
+				JComboBox box = (JComboBox) arg0.getSource();
+				iMonth = (String) box.getSelectedItem();
+				iDate = iMonth + "/" + iDay + "/" + iYear;
+				try{
+					issueDate = format.parse(iDate);
+				}catch (ParseException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+				gE.setIssued(issueDate);
+			}
+		});
+		cbIssueMonth.setModel(new DefaultComboBoxModel(new String[] {"01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"}));
+		
+		JComboBox cbDueMonth = new JComboBox();
+		cbDueMonth.addFocusListener(new FocusAdapter() {
+			@Override
+			public void focusLost(FocusEvent arg0) {
+				JComboBox box = (JComboBox) arg0.getSource();
+				dMonth = (String) box.getSelectedItem();
+				dDate = dMonth + "/" + dDay + "/" + dYear;
+				try{
+					issueDate = format.parse(dDate);
+				}catch (ParseException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+				gE.setDue(dueDate);
+			}
+		});
+		cbDueMonth.setModel(new DefaultComboBoxModel(new String[] {"01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"}));
+		
+		JComboBox cbIssueDay = new JComboBox();
+		cbIssueDay.addFocusListener(new FocusAdapter() {
+			@Override
+			public void focusLost(FocusEvent arg0) {
+				JComboBox box = (JComboBox) arg0.getSource();
+				iDay = (String) box.getSelectedItem();
+				iDate = iMonth + "/" + iDay + "/" + iYear;
+				try{
+					issueDate = format.parse(iDate);
+				}catch (ParseException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+				gE.setIssued(issueDate);
+			}
+		});
+		cbIssueDay.setModel(new DefaultComboBoxModel(new String[] {"01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31"}));
+		
+		JComboBox cbDueDay = new JComboBox();
+		cbDueDay.addFocusListener(new FocusAdapter() {
+			@Override
+			public void focusLost(FocusEvent arg0) {
+				JComboBox box = (JComboBox) arg0.getSource();
+				dDay = (String) box.getSelectedItem();
+				dDate = dMonth + "/" + dDay + "/" + dYear;
+				try{
+					issueDate = format.parse(dDate);
+				}catch (ParseException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+				gE.setDue(dueDate);
+			}
+		});
+		cbDueDay.setModel(new DefaultComboBoxModel(new String[] {"01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31"}));
+		
+		JComboBox cbIssueYear = new JComboBox();
+		cbIssueYear.addFocusListener(new FocusAdapter() {
+			@Override
+			public void focusLost(FocusEvent arg0) {
+				JComboBox box = (JComboBox) arg0.getSource();
+				iYear = (String) box.getSelectedItem();
+				iDate = iMonth + "/" + iDay + "/" + iYear;
+				try{
+					issueDate = format.parse(iDate);
+				}catch (ParseException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+				gE.setIssued(issueDate);
+			}
+		});
+		cbIssueYear.setModel(new DefaultComboBoxModel(new String[] {"2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024", "2025", "2026", "2027", "2028", "2029", "2030"}));
+		
+		JComboBox cbDueYear = new JComboBox();
+		cbDueYear.addFocusListener(new FocusAdapter() {
+			@Override
+			public void focusLost(FocusEvent arg0) {
+				JComboBox box = (JComboBox) arg0.getSource();
+				dYear = (String) box.getSelectedItem();
+				dDate = dMonth + "/" + dDay + "/" + dYear;
+				try{
+					issueDate = format.parse(dDate);
+				}catch (ParseException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+				gE.setDue(dueDate);
+			}
+		});
+		cbDueYear.setModel(new DefaultComboBoxModel(new String[] {"2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024", "2025", "2026", "2027", "2028", "2029", "2030"}));
+		
+		txtGlobalId = new JTextField();
+		txtGlobalId.addFocusListener(new FocusAdapter() {
+			@Override
+			public void focusLost(FocusEvent arg0) {
+				gE.setGlobalid(txtGlobalId.getText());
+			}
+		});
+		txtGlobalId.setText("Global ID");
+		txtGlobalId.setColumns(10);
+		
+		txtNumber = new JTextField();
+		txtNumber.addFocusListener(new FocusAdapter() {
+			@Override
+			public void focusLost(FocusEvent arg0) {
+				gE.setAssignNumber(txtNumber.getText());
+			}
+		});
+		txtNumber.setText("Number");
+		txtNumber.setColumns(10);
+		
+		txtADescription = new JTextField();
+		txtADescription.addFocusListener(new FocusAdapter() {
+			@Override
+			public void focusLost(FocusEvent arg0) {
+				gE.setDescription(txtADescription.getText());
+			}
+		});
+		txtADescription.setText("Description");
+		txtADescription.setColumns(10);
+		
+		txtTerm = new JTextField();
+		txtTerm.addFocusListener(new FocusAdapter() {
+			@Override
+			public void focusLost(FocusEvent arg0) {
+				gE.setTerm(txtTerm.getText());
+			}
+		});
+		txtTerm.setText("Term");
+		txtTerm.setColumns(10);
+		
+		txtReferenceNumber = new JTextField();
+		txtReferenceNumber.addFocusListener(new FocusAdapter() {
+			@Override
+			public void focusLost(FocusEvent arg0) {
+				gE.setCrn(txtReferenceNumber.getText());
+			}
+		});
+		txtReferenceNumber.setText("Reference Number");
+		txtReferenceNumber.setColumns(10);
+		
+		JLabel lblComments = new JLabel("Comments:");
+		
+		final JTextPane txtpnExtraComments = new JTextPane();
+		txtpnExtraComments.addFocusListener(new FocusAdapter() {
+			@Override
+			public void focusLost(FocusEvent arg0) {
+				gE.setComments(txtpnExtraComments.getText());
+			}
+		});
+		
+		JSeparator separator = new JSeparator();
+		
+		JLabel lblQuestion = new JLabel("Question:");
+		
+		txtQDescription = new JTextField();
+		txtQDescription.setText("Description");
+		txtQDescription.setColumns(10);
+		
+		txtPtsEarned = new JTextField();
+		txtPtsEarned.setText("0");
+		txtPtsEarned.setColumns(10);
+		
+		JLabel lblSlash = new JLabel("/");
+		
+		txtPtsPossible = new JTextField();
+		txtPtsPossible.setText("0");
+		txtPtsPossible.setColumns(10);
+		
+		JTextPane txtpnQComments = new JTextPane();
+		
+		JButton btnAddQuestion = new JButton("Add Question");
+		btnAddQuestion.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				
+			}
+		});
+		
+		JLabel lblQComments = new JLabel("Comments:");
+		
+		JLabel lblQuestion_1 = new JLabel("Questions:");
+		
+		JTextArea txtrThe = new JTextArea();
+		GroupLayout groupLayout = new GroupLayout(getFrmGradesheetEditor().getContentPane());
+		groupLayout.setHorizontalGroup(
+			groupLayout.createParallelGroup(Alignment.TRAILING)
+				.addGroup(groupLayout.createSequentialGroup()
+					.addContainerGap()
+					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+						.addComponent(separator, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 559, Short.MAX_VALUE)
+						.addGroup(groupLayout.createSequentialGroup()
+							.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+								.addComponent(lblName)
+								.addComponent(lblCourse)
+								.addComponent(lblIssueDate)
+								.addComponent(lblAssignment))
+							.addGap(18)
+							.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+								.addGroup(groupLayout.createSequentialGroup()
+									.addComponent(txtName, GroupLayout.DEFAULT_SIZE, 349, Short.MAX_VALUE)
+									.addPreferredGap(ComponentPlacement.UNRELATED)
+									.addComponent(txtGlobalId, GroupLayout.PREFERRED_SIZE, 123, GroupLayout.PREFERRED_SIZE))
+								.addGroup(groupLayout.createSequentialGroup()
+									.addGroup(groupLayout.createParallelGroup(Alignment.LEADING, false)
+										.addComponent(txtCName)
+										.addGroup(groupLayout.createSequentialGroup()
+											.addPreferredGap(ComponentPlacement.RELATED)
+											.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING, false)
+												.addComponent(cbDueMonth, Alignment.LEADING, 0, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+												.addComponent(cbIssueMonth, Alignment.LEADING, 0, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+											.addPreferredGap(ComponentPlacement.RELATED)
+											.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+												.addGroup(groupLayout.createSequentialGroup()
+													.addComponent(cbIssueDay, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+													.addPreferredGap(ComponentPlacement.RELATED)
+													.addComponent(cbIssueYear, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+												.addGroup(groupLayout.createSequentialGroup()
+													.addComponent(cbDueDay, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+													.addPreferredGap(ComponentPlacement.RELATED)
+													.addComponent(cbDueYear, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)))
+											.addGap(4))
+										.addComponent(txtAName, GroupLayout.PREFERRED_SIZE, 177, GroupLayout.PREFERRED_SIZE))
+									.addPreferredGap(ComponentPlacement.RELATED)
+									.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+										.addGroup(groupLayout.createSequentialGroup()
+											.addComponent(txtNumber, GroupLayout.PREFERRED_SIZE, 62, GroupLayout.PREFERRED_SIZE)
+											.addPreferredGap(ComponentPlacement.UNRELATED)
+											.addComponent(txtADescription, GroupLayout.DEFAULT_SIZE, 227, Short.MAX_VALUE))
+										.addGroup(groupLayout.createSequentialGroup()
+											.addComponent(txtTerm, GroupLayout.PREFERRED_SIZE, 134, GroupLayout.PREFERRED_SIZE)
+											.addPreferredGap(ComponentPlacement.UNRELATED)
+											.addComponent(txtReferenceNumber, GroupLayout.DEFAULT_SIZE, 155, Short.MAX_VALUE))))))
+						.addComponent(lblDueDate)
+						.addGroup(groupLayout.createSequentialGroup()
+							.addComponent(lblComments)
+							.addGap(18)
+							.addComponent(txtpnExtraComments, GroupLayout.DEFAULT_SIZE, 487, Short.MAX_VALUE))
+						.addGroup(groupLayout.createSequentialGroup()
+							.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+								.addComponent(lblQuestion)
+								.addComponent(lblQComments)
+								.addComponent(lblQuestion_1))
+							.addGap(18)
+							.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+								.addComponent(txtpnQComments, GroupLayout.DEFAULT_SIZE, 487, Short.MAX_VALUE)
+								.addGroup(groupLayout.createSequentialGroup()
+									.addComponent(txtQDescription, GroupLayout.PREFERRED_SIZE, 325, GroupLayout.PREFERRED_SIZE)
+									.addGap(18)
+									.addComponent(txtPtsEarned, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
+									.addPreferredGap(ComponentPlacement.RELATED)
+									.addComponent(lblSlash, GroupLayout.PREFERRED_SIZE, 4, GroupLayout.PREFERRED_SIZE)
+									.addPreferredGap(ComponentPlacement.RELATED)
+									.addComponent(txtPtsPossible, GroupLayout.PREFERRED_SIZE, 41, GroupLayout.PREFERRED_SIZE))
+								.addGroup(groupLayout.createSequentialGroup()
+									.addPreferredGap(ComponentPlacement.RELATED)
+									.addComponent(btnAddQuestion))
+								.addComponent(txtrThe, GroupLayout.DEFAULT_SIZE, 487, Short.MAX_VALUE))))
+					.addContainerGap())
+		);
+		groupLayout.setVerticalGroup(
+			groupLayout.createParallelGroup(Alignment.LEADING)
+				.addGroup(groupLayout.createSequentialGroup()
+					.addContainerGap()
+					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
+						.addComponent(lblName)
+						.addComponent(txtName, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(txtGlobalId, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
+						.addComponent(txtAName, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(lblAssignment)
+						.addComponent(txtADescription, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(txtNumber, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+					.addGap(5)
+					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
+						.addComponent(lblCourse, GroupLayout.PREFERRED_SIZE, 19, GroupLayout.PREFERRED_SIZE)
+						.addComponent(txtCName, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(txtTerm, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(txtReferenceNumber, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+					.addPreferredGap(ComponentPlacement.UNRELATED)
+					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
+						.addComponent(lblIssueDate, GroupLayout.PREFERRED_SIZE, 19, GroupLayout.PREFERRED_SIZE)
+						.addComponent(cbIssueMonth, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(cbIssueDay, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(cbIssueYear, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
+						.addComponent(lblDueDate, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+						.addComponent(cbDueMonth, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(cbDueDay, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(cbDueYear, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+						.addComponent(lblComments)
+						.addComponent(txtpnExtraComments, GroupLayout.PREFERRED_SIZE, 55, GroupLayout.PREFERRED_SIZE))
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addComponent(separator, GroupLayout.PREFERRED_SIZE, 2, GroupLayout.PREFERRED_SIZE)
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
+						.addComponent(lblQuestion)
+						.addComponent(txtQDescription, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(txtPtsEarned, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(lblSlash)
+						.addComponent(txtPtsPossible, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+						.addGroup(groupLayout.createSequentialGroup()
+							.addComponent(txtpnQComments, GroupLayout.PREFERRED_SIZE, 55, GroupLayout.PREFERRED_SIZE)
+							.addGap(12)
+							.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+								.addComponent(txtrThe, GroupLayout.PREFERRED_SIZE, 254, GroupLayout.PREFERRED_SIZE)
+								.addComponent(lblQuestion_1)))
+						.addComponent(lblQComments))
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addComponent(btnAddQuestion)
+					.addContainerGap())
+		);
+		getFrmGradesheetEditor().getContentPane().setLayout(groupLayout);
+		frmGradesheetEditor.getContentPane().setFocusTraversalPolicy(new FocusTraversalOnArray(new Component[]{lblName, txtName, lblAssignment, txtAName, lblCourse, txtCName, lblIssueDate, lblDueDate}));
+		
+		JMenuBar menuBar = new JMenuBar();
+		getFrmGradesheetEditor().setJMenuBar(menuBar);
+		
+		JMenu mnFile = new JMenu("File");
+		menuBar.add(mnFile);
+		
+		JMenuItem mntmNew = new JMenuItem("New");
+		mntmNew.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				gE = new GradeSheetEditor();
+				gE.
+			}
+		});
+		mnFile.add(mntmNew);
+		
+		JMenuItem mntmOpen = new JMenuItem("Open");
+		mntmOpen.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				gE.Open();
+				txtCName.setText(gE.getCourse().getName());
+				txtTerm.setText(gE.getCourse().getTerm());
+				txtNumber.setText(gE.getCourse().getCrn());
+				txtReferenceNumber.setText(gE.getAssignNumber());
+				txtQDescription.setText(gE.getDescription());
+				gE.setDue(gE.getDue());
+				gE.setIssued(gE.getIssued());
+			}
+		});
+		mnFile.add(mntmOpen);
+		
+		JMenuItem mntmSave = new JMenuItem("Save");
+		mntmSave.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				gE.save();
+			}
+		});
+		mnFile.add(mntmSave);
+		
+		JMenuItem mntmClose = new JMenuItem("Close");
+		mntmClose.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				System.exit(0);
+			}
+		});
+		mnFile.add(mntmClose);
+	}
+
+	public JFrame getFrmGradesheetEditor() {
+		return frmGradesheetEditor;
+	}
+
+	public void setFrmGradesheetEditor(JFrame frmGradesheetEditor) {
+		this.frmGradesheetEditor = frmGradesheetEditor;
+	}
+}

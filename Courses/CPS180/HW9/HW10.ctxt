@@ -1,0 +1,12 @@
+#BlueJ class context
+comment0.params=args
+comment0.target=void\ main(java.lang.String[])
+comment1.params=input\ values
+comment1.target=int\ fillArray(java.util.Scanner,\ double[])
+comment2.params=values\ size
+comment2.target=double\ average(double[],\ int)
+comment3.params=input\ values\ size\ mean
+comment3.target=double\ deviation(java.util.Scanner,\ double[],\ int,\ double)
+comment4.params=values\ size\ mean\ sd
+comment4.target=void\ displayScores(double[],\ int,\ double,\ double)
+numComments=5

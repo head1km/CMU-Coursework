@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/cps240_22161280/!svn/ver/730/trunk/examples/src/gof/state
+END
+StateA.java
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/cps240_22161280/!svn/ver/730/trunk/examples/src/gof/state/StateA.java
+END
+StateContext.java
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/cps240_22161280/!svn/ver/730/trunk/examples/src/gof/state/StateContext.java
+END
+TestClientState.java
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/cps240_22161280/!svn/ver/730/trunk/examples/src/gof/state/TestClientState.java
+END
+State.java
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/cps240_22161280/!svn/ver/730/trunk/examples/src/gof/state/State.java
+END
+StateB.java
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/cps240_22161280/!svn/ver/730/trunk/examples/src/gof/state/StateB.java
+END

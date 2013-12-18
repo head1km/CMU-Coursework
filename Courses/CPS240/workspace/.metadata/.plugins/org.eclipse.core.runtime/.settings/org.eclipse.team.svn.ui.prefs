@@ -1,0 +1,22 @@
+#Fri Nov 11 14:14:08 EST 2011
+preference.repository.repositoryBrowser=false
+org.eclipse.team.svn.ui.panel.reporting.ErrorCancelPanel.width=640
+org.eclipse.team.svn.ui.panel.local.EditTreeConflictsPanel.width=470
+org.eclipse.team.svn.ui.panel.local.CommitPanel.height=583
+org.eclipse.team.svn.ui.panel.local.EditTreeConflictsPanel.height=343
+org.eclipse.team.svn.ui.panel.local.CommitPanel.width=764
+org.eclipse.team.svn.ui.panel.ListSelectionPanel.width=470
+org.eclipse.team.svn.ui.panel.callback.PromptCredentialsPanel.width=470
+eclipse.preferences.version=1
+firstStartup=false
+org.eclipse.team.svn.ui.panel.callback.PromptCredentialsPanel.height=240
+history.repositoryUser=aGVhZDFrbQ\=\=
+org.eclipse.team.svn.ui.panel.local.UpdateToRevisionPanel.height=223
+org.eclipse.team.svn.ui.panel.reporting.ErrorCancelPanel.height=139
+history.comment=TWFkZSBzb21lIGVkaXRzIHRvIGdyYWRlc2hlZXRlZGl0b3Ih;TWFkZSBzZXBhcmF0ZSBwYWNrYWdlIGZvciB0ZXN0Y2FzZXMh;ZA\=\=;ZGVsZXRpbmcgb2xkIHByYWN0aWNlIGZpbGVz;ZGVsZXRlZCB0ZXN0IGZvbGRlcg\=\=;Rml4ZWQgdGhlIHRlc3RjYXNlcyE\=;Rml4ZWQgdGVzdCBjYXNlIHByb2JsZW1zIQ\=\=;Rml4ZWQgcGFja2FnZSBwcm9ibGVtcyE\=;Q29ycmVjdGVkIGltcG9ydHMgZm9yIEpVbml0IHRlc3RzIQ\=\=;QWRkZWQgeG1sIG9wZW4gYW5kIHNhdmUgdG8gZ3JhZGVzaGVldGVkaXRvciE\=
+org.eclipse.team.svn.ui.panel.local.UpdateToRevisionPanel.width=470
+org.eclipse.team.svn.ui.panel.common.RepositoryTreePanel.height=201
+history.selectCheckoutUrl=aHR0cHM6Ly9jcHMtc3ZuMi5jcHMuY21pY2guZWR1L2NwczI0MF8yMjE2MTI4MC90cnVuay9odzA4L0FuZ3N0eV9CdXR0ZXJmbGllcy9GaW5hbA\=\=;aHR0cHM6Ly9jcHMtc3ZuMi5jcHMuY21pY2guZWR1L2NwczI0MF8yMjE2MTI4MA\=\=;aHR0cHM6Ly9jcHMtc3ZuMi5jcHMuY21pY2guZWR1L2NwczI0MF8yMjE2MTI4MC90cnVuay9odzA4L0FuZ3N0eV9CdXR0ZXJmbGllcw\=\=;aHR0cHM6Ly9jcHMtc3ZuMi5jcHMuY21pY2guZWR1L2NwczI0MF8yMjE2MTI4MC90cnVuay9odzA3L2hlYWQxa20\=;aHR0cHM6Ly9jcHMtc3ZuMi5jcHMuY21pY2guZWR1L2NwczI0MF8yMjE2MTI4MC90cnVuay9odzA3L2hlYWQxaw\=\=
+org.eclipse.team.svn.ui.panel.ListSelectionPanel.height=187
+history.repositoryURL=aHR0cHM6Ly9jcHMtc3ZuMi5jcHMuY21pY2guZWR1L2NwczI0MF8yMjE2MTI4MC8\=;aHR0cHM6Ly9jcHMtc3ZuMi5jcHMuY21pY2guZWR1L2NwczI0MF8yMjE2MTI4MC90cnVuay9odzA0L2hlYWQxa20\=;aHR0cHM6Ly9jcHMtc3ZuMi5jcHMuY21pY2guZWR1L2NwczI0MF8yMjE2MTI4MC90cnVuay9odzA0Lw\=\=
+org.eclipse.team.svn.ui.panel.common.RepositoryTreePanel.width=470

@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/cps240_22161280/!svn/ver/308/trunk/examples/junit
+END
+TEST-${test.2.class}.xml
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/cps240_22161280/!svn/ver/308/trunk/examples/junit/TEST-$%7Btest.2.class%7D.xml
+END
+TEST-${test.1.class}.xml
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/cps240_22161280/!svn/ver/308/trunk/examples/junit/TEST-$%7Btest.1.class%7D.xml
+END

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move element &apos;Student.java&apos; to &apos;Final_java_project/src/angsty_Butterflies&apos;&#x0A;- Original project: &apos;hw07&apos;&#x0A;- Destination element: &apos;Final_java_project/src/angsty_Butterflies&apos;&#x0A;- Original element: &apos;edu.cmich.cps.cps240.head1km.hw07.RubricAndGradesheet.Student.java&apos;&#x0A;- Update fully qualified names in &apos;*&apos; files" description="Move compilation unit" destination="=Final_java_project/src&lt;angsty_Butterflies" element1="/src&lt;edu.cmich.cps.cps240.head1km.hw07.RubricAndGradesheet{Student.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.move" patterns="*" policy="org.eclipse.jdt.ui.moveResources" qualified="true" references="false" stamp="1320725958207" units="1" version="1.0"/>
+</session>

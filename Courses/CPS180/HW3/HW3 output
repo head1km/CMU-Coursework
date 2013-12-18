@@ -1,0 +1,38 @@
+Hello!
+ Here are the items we have today:
+   T-shirt $12.95
+   Candies  $3.95
+     Chips  $2.88
+      Coke  $1.99
+How many T-shirts would you like?
+2
+How many Candies would you like?
+3
+How many Chips would you like?
+3
+How much Coke would you like?
+4
+What are you paying with?
+60
+item            unit price        how many            cost
+---------------------------------------------------------------
+T-shirt              12.95               2           25.90 
+                                                    (-3.88)
+Candies               3.95               3           11.85 
+                                                    (-1.78)
+Chips                 2.88               3            8.64 
+                                                    (-1.30)
+Coke                  1.99               4            7.96 
+                               deposit                4.80
+
+                               subtotal              59.15
+                               you saved             (6.96)
+                               tax                    1.55
+
+                                              -----------------
+                               total                 53.74
+
+                               payment               60.00
+                               change                 6.26
+
+     Thank you. Come again!

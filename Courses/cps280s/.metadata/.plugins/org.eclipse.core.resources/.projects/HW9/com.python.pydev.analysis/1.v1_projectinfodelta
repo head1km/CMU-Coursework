@@ -1,0 +1,16 @@
+INSTUPtictactoe
+/Users/khead90/Documents/code/cps280s/HW9/tictactoe.py
+INFOS:&&2|1|2|0&&2|3|2|0&&2|4|2|0&&2|5|2|0&&2|6|2|0&&2|7|2|0&&2|8|2|0&&2|9|2|0&&2|10|2|0&&2|11|2|0&&2|12|2|0&&2|13|2|0
+simulate=6
+checkWin=4
+single=8
+tie=5
+tictactoe=2
+playagain=1
+win=3
+main=13
+startGame=9
+writeboard=10
+getinput=12
+doubles=7
+getfirst=11

@@ -1,0 +1,19 @@
+/**
+ * 
+ */
+package edu.cmich.cps.cps240.head1km;
+
+/**
+ * @author head1km
+ *
+ */
+public class Hello {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		
+	}
+	System.out.println("Hello World");
+}
